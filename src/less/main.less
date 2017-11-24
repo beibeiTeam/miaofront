@@ -8,11 +8,12 @@
 @left-widht:280px;
 @c-radius:4px;
 @c-margin:20px;
+@font-color:#333;
 @m-blue:#3992e9;
 body, html {
     margin: 0;
     padding: 0;
-    color: #333;
+    color: @font-color;
     -webkit-font-smoothing: antialiased;  //字体清晰
 }
 body {
@@ -32,7 +33,7 @@ li{
 	list-style: none;
 }
 a {
-    color: #333;
+    color: @font-color;
     text-decoration: none;
     outline: 0;
 }
@@ -205,7 +206,7 @@ a:hover,a:active,a:link{
 					border-radius: 0 0 @c-radius @c-radius;
 			border-bottom: 0;
 		}
-		.menu-list li.current{
+		.menu-list li.open .link{
 			font-weight: 600;
 		}
 		.menu-list-small dd{
@@ -214,6 +215,19 @@ a:hover,a:active,a:link{
 			line-height: 52px;
 			padding-left: 52px;
 			background-color: #e7e7e7;
+			border-bottom: 1px solid #fff;
+		}
+		.menu-list-small dd:last-child{
+			border-bottom: 0;
+		}
+		.fa-chevron-down{
+			background: url('../img/down.png') no-repeat center;
+			width: 17px;
+			height: 17px;
+			float: right;
+		}
+		.open .fa-chevron-down{
+			background: url('../img/up.png') no-repeat center;
 		}
 	}
 	/*右侧*/
@@ -242,8 +256,11 @@ a:hover,a:active,a:link{
 			margin: @c-margin;
 			border: 1px solid #d3d3d3;
 			line-height: 44px;
-			padding-left: 17px;
 			background: url(../img/sl-bg.gif) repeat-x;
+			.icon{
+				background: url(../img/selected.png) no-repeat center;
+				height: 44px;
+			}
 		}
 		&-table{
 			margin-bottom: @c-margin;

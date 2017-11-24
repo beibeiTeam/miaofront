@@ -29,7 +29,7 @@ $(function(){
             var li_h=$(this).find('.link').outerHeight();
             var sb_h=$('.menu-sideline').height();
             $(".menu-sideline").css({top:(li_h-sb_h)/2});
-            $(".menu-list li").eq(0).addClass("current").siblings().removeClass("current");
+            $(".menu-list li").eq(0).addClass("open").siblings().removeClass("open");
         }
     });
     $(".menu-list li").on('click',function(){
@@ -37,7 +37,6 @@ $(function(){
         var li_h=$(this).find('.link').outerHeight();
         var sb_h=$('.menu-sideline').height();
         $(".menu-sideline").animate({top:(li_h-sb_h)/2 + li_h*index});
-        $(".menu-list li").eq(0).addClass("current").siblings().removeClass("current");
     });
     /*左侧菜单手风琴效果*/
     var Accordion = function(el, multiple) {

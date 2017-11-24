@@ -247,7 +247,7 @@ a:link {
   border-radius: 0 0 4px 4px;
   border-bottom: 0;
 }
-.container-left .menu-list li.current {
+.container-left .menu-list li.open .link {
   font-weight: 600;
 }
 .container-left .menu-list-small dd {
@@ -256,6 +256,19 @@ a:link {
   line-height: 52px;
   padding-left: 52px;
   background-color: #e7e7e7;
+  border-bottom: 1px solid #fff;
+}
+.container-left .menu-list-small dd:last-child {
+  border-bottom: 0;
+}
+.container-left .fa-chevron-down {
+  background: url('../img/down.png') no-repeat center;
+  width: 17px;
+  height: 17px;
+  float: right;
+}
+.container-left .open .fa-chevron-down {
+  background: url('../img/up.png') no-repeat center;
 }
 .container-right {
   float: left;
@@ -283,8 +296,11 @@ a:link {
   margin: 20px;
   border: 1px solid #d3d3d3;
   line-height: 44px;
-  padding-left: 17px;
   background: url(../img/sl-bg.gif) repeat-x;
+}
+.container .classes-selected .icon {
+  background: url(../img/selected.png) no-repeat center;
+  height: 44px;
 }
 .container .classes-table {
   margin-bottom: 20px;
